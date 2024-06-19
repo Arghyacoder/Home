@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product Sans">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Error 404 (not found)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Oswald";
+        }
+
+        .contentErrorPage {
+            display: flex;
+            padding: 12vw 0vh 0 30vw;
+        }
+
+        .contentHeadingErrorPage {
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+        }
+
+        .contentHeadingErrorPage a {
+            text-decoration: none;
+            animation: ColorPalette 1s infinite;
+        }
+
+        @keyframes ColorPalette {
+            10%{
+                color: red;
+            }
+            20%{
+                color: rgb(0, 185, 0);
+            }
+            30%{
+                color: rgb(234, 207, 0);
+            }
+            40%{
+                color: blue;
+            }
+        }
+
+        .contentNameErrorPage {
+            color: rgb(0, 0, 0);
+        }
+
+        .contentErrorPage img{
+            width: 200px;
+        }
+
+        .pic1{
+            position: absolute;
+            z-index: 1;
+            border: solid;
+            border-color: black;
+        }
+
+        .pic2{
+            position: absolute;
+            z-index: 1;
+            top: 19vw;
+            left: 54vw;
+            border: solid;
+            border-color: black;
+        }
+
+        .pic3{
+            position: absolute;
+            top: 10vw;
+            right: 29vw;
+            border: solid;
+            border-color: black;
+        }
+
+        .pictureErrorPage{
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 910px){
+            .contentErrorPage {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .pictureErrorPage{
+                display: none;
+            }
+
+        }
+
+        @media only screen and (max-width: 500px){
+            .pictureErrorPage{
+                display: none;
+            }
+
+            .contentErrorPage {
+                padding: 12vw 0vh 0 15vw;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contentErrorPage">
+        <div class="contentHeadingErrorPage">
+            <h2 class="contentNameErrorPage">Arghyadipta Das</h2>
+            <p><b>Error 404</b></p>
+            <p>URL was not found!</p>
+            <a href="index.html">Go home</a>
+        </div>
+        <div class="pictureErrorPage">
+            <img class="pic1" src="https://i.pinimg.com/736x/b2/db/43/b2db4385f4faa3fdb542d2d277a3278a.jpg" alt="">
+            <img class="pic2" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Windows_9X_BSOD.png" alt="">
+            <img class="pic3" src="https://i.pinimg.com/736x/ab/70/ab/ab70ab7a697f49d7e19666fc547d079d.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
