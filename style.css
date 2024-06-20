@@ -92,6 +92,7 @@ body{
     align-items: center;
     background-color: black;
     color: white;
+    width: 100%;
 }
 
 .footerContent{
@@ -114,22 +115,76 @@ canvas{
 
 .contentHome{
     display: flex;
+    justify-content: center;
 }
 
 .contentHeading{
     color: white;
     padding: 50px;
     font-size: 62px;
-    width: 106vh;
+    width: 105vh;
+    /* width: 74vh; */
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.contentBody{
+    width: 640px;
+    padding: 10px 0px 0px 53px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 @media only screen and (max-width: 900px){
     .item{
         display: none;
     }
+
+    .contentHeading{
+        color: white;
+        padding: 50px;
+        font-size: 50px;
+        width: 27vh;
+    }
+
+    .contentBody{
+        width: 281px;
+        padding: 10px 0px 0px 60px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .footer{
+        width: 100%;
+    }
+
 }
 
 @media only screen and (max-width: 600px){
+
+    .contentHome{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contentBody{
+        width: 281px;
+        padding: 10px 0px 0px 40px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .content{
+        justify-content: center;
+    }
+
+    canvas{
+        border-bottom-left-radius: 450px;
+    }
 
     .item{
         display: none;
@@ -185,10 +240,22 @@ canvas{
         margin: 0;
     }
 
+    .nav-bar.expanded {
+        height: auto; /* Expanded height */
+    }
+
+    .invisible {
+        opacity: 1; /* Improved here: Show when visible class is added */
+    }
+
     .footerContent{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .footer{
+        width: 100%;
     }
     
 }
