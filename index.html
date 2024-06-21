@@ -159,10 +159,14 @@
         const navbar = document.querySelector('.navbar');
         const navlist = document.querySelector('.navlist');
 
-        burger.addEventListener('click', () => {
-            navlist.classList.toggle('visible');
-            // navlist.classList.toggle('expanded'); 
-            navbar.classList.toggle('expanded');
+        // burger.addEventListener('click', () => {
+        //     navlist.classList.toggle('visible');
+        //     navbar.classList.toggle('expanded');
+        // });
+
+        document.querySelector('.burger').addEventListener('click', function () {
+            document.querySelector('.navlist').classList.toggle('expanded');
+            document.querySelector('.navbar').classList.toggle('expandedlist');
         });
     </script>
     <script>
