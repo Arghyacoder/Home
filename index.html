@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/a.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product Sans">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,7 +132,9 @@
         </div>
     </nav>
     <div class="contentHome">
-        <canvas id="canvas" width="600" height="550"></canvas>
+        <div class="canvasSize">
+            <canvas id="canvas" width="550" height="550"></canvas>
+        </div>
         <div class="content">
             <p class="contentHeading">Developing cool technologies for better tomorrow</p>
             <p class="contentBody">Developing cool technologies for a better tomorrow involves leveraging innovation to create solutions that enhance daily life, improve sustainability, and foster global connectivity. From advanced renewable energy systems to smart cities, and from cutting-edge software development to sophisticated electronics, these technologies address pressing challenges like climate change, efficient resource management, and the digital divide. Pioneering fields such as artificial intelligence, renewable energy, the Internet of Things, and electronics promise to revolutionize industries, making them more efficient and user-friendly. As we invest in research and development, we pave the way for a future where technology seamlessly integrates into our lives, driving progress and improving quality of life for all.</p>
@@ -175,11 +177,21 @@
         var canvas = document.getElementById("canvas"),
             ctx = canvas.getContext('2d');
 
-        // canvas.width = window.innerWidth;
-        // canvas.height = window.innerHeight;
+        let canvasStyle = getComputedStyle(canvas);
+        let canvasWidth = parseInt(canvasStyle.width);
+        let canvasHeight = parseInt(canvasStyle.height);
 
-        canvas.width = 600;
-        canvas.height = 550;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        canvas.width = 700;
+        canvas.height = 700;
+
+        // function setCanvasSize() {
+        //     canvas.width = window.innerWidth;
+        //     canvas.height = window.innerHeight;
+        //     initializeStars();
+        // }
 
         var stars = [], // Array that contains the stars
             FPS = 60, // Frames per second
@@ -190,7 +202,6 @@
             };  // mouse location
 
         // Push stars to array
-
         for (var i = 0; i < x; i++) {
             stars.push({
                 x: Math.random() * canvas.width,
@@ -202,7 +213,6 @@
         }
 
         // Draw the scene
-
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -227,7 +237,6 @@
                 for (var j = 0, x = stars.length; j < x; j++) {
                     var starII = stars[j];
                     if (distance(starI, starII) < 150) {
-                        //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
                         ctx.lineTo(starII.x, starII.y);
                     }
                 }
@@ -251,7 +260,6 @@
         }
 
         // Update star locations
-
         function update() {
             for (var i = 0, x = stars.length; i < x; i++) {
                 var s = stars[i];
@@ -270,7 +278,6 @@
         });
 
         // Update and draw
-
         function tick() {
             draw();
             update();
