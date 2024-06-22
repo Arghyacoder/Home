@@ -5,6 +5,10 @@
     /* font-family: "Product Sans", sans-serif; */
 }
 
+*::selection{
+	background: rgb(102, 0, 0);
+}
+
 body{
     background: black;
 }
@@ -14,7 +18,7 @@ body{
     background-color: rgba(0, 0, 0, -40);
     position: fixed;
     width: 100%;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(3px);
 }
 
 .navlist{
@@ -133,38 +137,108 @@ canvas{
 }
 
 .contentBody{
-    max-width: 640px;
-    padding: 10px 0px 0px 53px;
+    max-width: 93vh;
+    padding: 10px 53px 10px 53px;
     text-align: justify;
     text-justify: inter-word;
 }
 
-@media only screen and (max-width: 900px){
-    .item{
-        display: none;
-    }
+/* #canvas {
+    width: 60vh; 
+    height: 60vh; 
+} */
 
+@media only screen and (max-width:1025px){
+
+    .canvasSize{
+        width: 112vh; 
+        height: 40vh;
+    }
+    
+    .contentHome{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .contentHeading{
         color: white;
-        padding: 50px;
-        font-size: 50px;
-        width: 37vh;
+        padding: 58px;
+        font-size: 66px;
+        width: 100vh;
+        text-align: center;
     }
 
     .contentBody{
-        width: 281px;
+        width: 95vh;
         padding: 10px 0px 0px 60px;
         text-align: justify;
         text-justify: inter-word;
     }
 
+}
+
+@media only screen and (max-width: 900px){
+
+    .item{
+        display: none;
+    }
+
+    .contentHome{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contentHeading{
+        color: white;
+        padding: 60px;
+        font-size: 66px;
+        width: 92vh;
+        text-align: center;
+    }
+
+    .contentBody{
+        width: 95vh;
+        padding: 10px 0px 0px 60px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
     .footer{
         width: 100%;
     }
 
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 718px){
+
+    #canvas {
+        width: 70vh;
+        height: 60vh; 
+    } 
+
+    .canvasSize {
+        width: 70vh;
+        height: 40vh;
+    }
+
+}
+
+@media only screen and (max-width: 700px){
+
+    .canvasSize{
+        width: 70vh; 
+        height: 40vh;
+    }
+
+    canvas {
+        display: block; /* Ensure canvas does not cause overflow */
+    }
+
+    .contentHeading{
+        width: 55vh;
+        text-align: center;
+    }
 
     .contentHome{
         display: flex;
@@ -172,7 +246,7 @@ canvas{
     }
 
     .contentBody{
-        width: 37vh;
+        width: 68vw;
         padding: 10px 50px 0px 50px;
         text-align: justify;
         text-justify: inter-word;
@@ -180,6 +254,7 @@ canvas{
 
     .content{
         justify-content: center;
+        align-items: center;
     }
 
     canvas{
@@ -197,6 +272,8 @@ canvas{
         width: 100%;
         height: 50px;
         justify-content: center;
+        transition-property: all;
+        transition-duration: 0.25s;
     }
 
     .navlist{
@@ -241,6 +318,8 @@ canvas{
 
     .expandedlist{
         height: 215px;
+        transition-property: all;
+        transition-duration: 0.25s;
     }
 
     .invisible {
@@ -257,4 +336,34 @@ canvas{
         width: 100%;
     }
     
+}
+
+@media only screen and (max-width: 480px){
+
+    #canvas {
+        width: 43vh;
+        height: 40vh;
+    } 
+
+    .canvasSize {
+        width: 45vh;
+        height: 40vh;
+    }
+
+    .contentHeading {
+        width: 32vh;
+        font-size: 42px;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 325px){
+
+    .contentHeading{
+        width: 29vh;
+        font-size: 46px;
+        padding: 10px 10px 10px 10px;
+    }
+
 }
